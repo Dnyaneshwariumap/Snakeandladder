@@ -27,12 +27,28 @@ public class SnakeAndLadder {
                     break;
 
                 case 2:                                 // Ladder Case
-                    player = player + dice;
-                    if( player>100){
-                        player=100;  //uc4
-                    }
-                    System.out.println("Ladder  =>   Score of Player is => " + player);
-                    break;
+                    int temp = player;
+                    player = player + dice; // Ladder Case
+                    if (player > 100) {
+                        int zero =0;
+                        player =  zero + temp;
+
+                        System.out.println(" Try Again! ");
+                        System.out.println("Ladder  =>   Score of Player is => " + player);
+
+                    } else if (player ==100) { //uc5
+
+                        System.out.println("Ladder  =>   Score of Player is => " + player);
+                        System.out.println("Player won!");
+
+                    } else {
+
+
+                        System.out.println("Ladder  =>   Score of Player is => " + player);
+                        System.out.println("");
+                        continue;
+                    }break;
+
 
                 case 3:                                 // Snake Case
                     player = player - dice;
