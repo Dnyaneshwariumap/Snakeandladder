@@ -13,29 +13,36 @@ public class SnakeAndLadder {
 
 
         int player = 0;// uc1
-        System.out.println("Player position => "+player);
+        System.out.println("Player position => " + player);
+        while (player != 100) {
+            int dice = random.nextInt(6) + 1;// uc2
+            System.out.println("dice show"+dice);
 
-        int dice = random.nextInt(6)+1;// uc2
+            int game = random.nextInt(3) + 1; // uc3
 
+            switch (game) {
+                case 1:                                 // No Play case
+                    player += 0;
+                    System.out.println(" No play  =>  Score of Player is => " + player);
+                    break;
 
-        int game = random.nextInt(3)+1; // uc3
+                case 2:                                 // Ladder Case
+                    player = player + dice;
+                    if( player>100){
+                        player=100;  //uc4
+                    }
+                    System.out.println("Ladder  =>   Score of Player is => " + player);
+                    break;
 
-        switch(game){
-            case 1:                                 // No Play case
-                player +=0;
-                System.out.println(" Score of Player is => "+player);
-                break;
+                case 3:                                 // Snake Case
+                    player = player - dice;
+                    if (player<0){
+                        player =0;  //uc4
+                    }
+                    System.out.println("Snake  =>  Score of Player is => " + player);
+                    break;
+            }
 
-            case 2:                                 // Ladder Case
-                player = player + dice;
-                System.out.println(" Score of Player is => "+player);
-                break;
-
-            case 3:                                 // Snake Case
-                player = player - dice;
-                System.out.println("Score of Player is => "+player);
-                break;
         }
-   
     }
 }
