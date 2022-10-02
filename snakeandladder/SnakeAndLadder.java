@@ -14,7 +14,9 @@ public class SnakeAndLadder {
 
         int player = 0;// uc1
         System.out.println("Player position => " + player);
+        int count=0;
         while (player != 100) {
+            count++;
             int dice = random.nextInt(6) + 1;// uc2
             System.out.println("dice show"+dice);
 
@@ -60,5 +62,6 @@ public class SnakeAndLadder {
             }
 
         }
+        System.out.println("dice rolled count =>"+count);//uc6
     }
 }
